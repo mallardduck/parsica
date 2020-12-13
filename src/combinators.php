@@ -470,7 +470,8 @@ function many(Parser $parser): Parser
  */
 function between(Parser $open, Parser $close, Parser $middle): Parser
 {
-    return keepSecond($open, keepFirst($middle, $close));
+    return keepSecond($open, keepFirst($middle, $close))
+        ->label("keep {$middle->getLabel()} BETWEEN {$open->getLabel()} and {$close->getLabel()}");
 }
 
 /**

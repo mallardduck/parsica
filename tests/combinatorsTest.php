@@ -313,10 +313,11 @@ final class combinatorsTest extends TestCase
     /** @test */
     public function between_failure()
     {
+        $parserLabel = "keep at least one A-Z or a-z or 0-9 BETWEEN '{' and '}'";
         $parser = between(char('{'), char('}'), atLeastOne(alphaNumChar()));
-        $this->assertParseFails("foo}", $parser, "'{'");
-        $this->assertParseFails("{foo", $parser, "'}'");
-        $this->assertParseFails("{}", $parser, "A-Z or a-z or 0-9");
+        $this->assertParseFails("foo}", $parser, $parserLabel);
+        $this->assertParseFails("{foo", $parser, $parserLabel);
+        $this->assertParseFails("{}", $parser, $parserLabel);
     }
 
     /** @test */
