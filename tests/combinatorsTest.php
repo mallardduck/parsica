@@ -318,6 +318,7 @@ final class combinatorsTest extends TestCase
         $this->assertParseFails("foo}", $parser, $parserLabel);
         $this->assertParseFails("{foo", $parser, $parserLabel);
         $this->assertParseFails("{}", $parser, $parserLabel);
+        $this->assertParseFails("{fo#od}", $parser, $parserLabel);
     }
 
     /** @test */
