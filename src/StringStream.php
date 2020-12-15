@@ -15,7 +15,7 @@ use Verraes\Parsica\Internal\Position;
 use Verraes\Parsica\Internal\TakeResult;
 
 /**
- * @psalm-immutable
+ * @psalm-external-mutation-free
  */
 final class StringStream implements Stream
 {
